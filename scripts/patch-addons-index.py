@@ -16,13 +16,12 @@ from pathlib import Path
 META_KEYS = {"$schema", "_meta"}
 
 
-def target_fields(*, tag: str, repo_url: str) -> dict[str, object]:
+def target_fields(*, tag: str, repo_url: str) -> dict[str, str]:
     return {
         "repository": repo_url,
         "git_ref": tag,
         "branch_display_name": tag,
         "zip_url": f"{repo_url}/archive/refs/tags/{tag}.zip",
-        "curated": True,
     }
 
 
@@ -39,8 +38,7 @@ def entry_block(entry_id: str, fields: dict[str, object], indent: str = "  ") ->
         f'{field_indent}"repository": {json_string(str(fields["repository"]))},',
         f'{field_indent}"git_ref": {json_string(str(fields["git_ref"]))},',
         f'{field_indent}"branch_display_name": {json_string(str(fields["branch_display_name"]))},',
-        f'{field_indent}"zip_url": {json_string(str(fields["zip_url"]))},',
-        f'{field_indent}"curated": true',
+        f'{field_indent}"zip_url": {json_string(str(fields["zip_url"]))}',
         f"{item_indent}}}",
         f"{indent}],",
     ]
@@ -70,28 +68,13 @@ def replace_json_string_field(block: str, field: str, value: str) -> tuple[str, 
     return block[: match.start()] + replacement + block[match.end() :], True
 
 
-def replace_curated_field(block: str, value: bool) -> tuple[str, bool]:
-    pattern = re.compile(
-        r'(?m)^(?P<indent>[ \t]*)"curated"\s*:\s*(?P<val>true|false)\s*,?\s*$'
-    )
-    match = pattern.search(block)
-    if not match:
-        return block, False
-    literal = "true" if value else "false"
-    if match.group("val") == literal:
-        return block, False
-    replacement = f'{match.group("indent")}"curated": {literal}'
-    return block[: match.start()] + replacement + block[match.end() :], True
-
-
-def patch_existing_block(block: str, fields: dict[str, object]) -> tuple[str, bool]:
+def patch_existing_block(block: str, fields: dict[str, str]) -> tuple[str, bool]:
     updated = block
     changed = False
     for key in ("repository", "git_ref", "branch_display_name", "zip_url"):
-        updated, field_changed = replace_json_string_field(updated, key, str(fields[key]))
+        updated, field_changed = replace_json_string_field(updated, key, fields[key])
         changed = changed or field_changed
-    updated, curated_changed = replace_curated_field(updated, bool(fields["curated"]))
-    return updated, changed or curated_changed
+    return updated, changed
 
 
 def insert_position(text: str, entry_id: str) -> int:
