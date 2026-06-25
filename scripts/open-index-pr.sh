@@ -19,6 +19,7 @@ ADDONS_INDEX_ENTRY_ID="${ADDONS_INDEX_ENTRY_ID:-freecad-mcp-bridge}"
 ADDON_REPO_URL="${ADDON_REPO_URL:-https://github.com/CREATeNG/freecad-mcp-bridge}"
 ADDONS_INDEX_ALLOW_ADD="${ADDONS_INDEX_ALLOW_ADD:-true}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PATCH_SCRIPT="${SCRIPT_DIR}/patch-addons-index.py"
 BRANCH="index/${ADDONS_INDEX_ENTRY_ID}-${RELEASE_TAG}"
 INDEX_PATH="Data/Index.json"
 
@@ -32,6 +33,15 @@ if [[ -z "${GH_TOKEN:-}" ]]; then
   echo "GH_TOKEN is required." >&2
   exit 1
 fi
+
+if [[ ! -f "$PATCH_SCRIPT" ]]; then
+  echo "Missing ${PATCH_SCRIPT} (fork-only helper)." >&2
+  exit 1
+fi
+
+patch_script_tmp="$(mktemp)"
+cp "$PATCH_SCRIPT" "$patch_script_tmp"
+trap 'rm -f "$patch_script_tmp"' EXIT
 
 if ! git remote get-url upstream >/dev/null 2>&1; then
   git remote add upstream "https://github.com/${ADDONS_INDEX_UPSTREAM_REPO}.git"
@@ -48,7 +58,7 @@ if [[ ! -f "$INDEX_PATH" ]]; then
 fi
 
 before_hash=$(sha256sum "$INDEX_PATH" | awk '{print $1}')
-python3 "${SCRIPT_DIR}/patch-addons-index.py" \
+python3 "$patch_script_tmp" \
   "$INDEX_PATH" \
   "$ADDONS_INDEX_ENTRY_ID" \
   "$RELEASE_TAG" \
