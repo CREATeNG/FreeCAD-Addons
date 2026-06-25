@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Patch Data/Index.json on this fork and push an index branch.
+# Patch Data/Index.json and push an index branch for an upstream PR.
+# Branch is cut from upstream/main so the PR diff is Data/Index.json only.
+# Fork automation (this script, patch-addons-index.py, index-release.yml) stays on fork main.
 # Upstream PR is opened from freecad-mcp-bridge (PAT). INTERNAL to index-release.yml.
 
 set -euo pipefail
@@ -36,8 +38,9 @@ if ! git remote get-url upstream >/dev/null 2>&1; then
 fi
 
 git fetch upstream "$ADDONS_INDEX_UPSTREAM_BRANCH"
-git merge "upstream/${ADDONS_INDEX_UPSTREAM_BRANCH}" --no-edit -m "Sync upstream before ${RELEASE_TAG} index PR"
-git push origin "HEAD:${ADDONS_INDEX_UPSTREAM_BRANCH}" || true
+
+# Upstream PRs must not include fork-only automation; branch from upstream/main.
+git checkout -B "$BRANCH" "upstream/${ADDONS_INDEX_UPSTREAM_BRANCH}"
 
 if [[ ! -f "$INDEX_PATH" ]]; then
   echo "Missing ${INDEX_PATH}." >&2
@@ -60,11 +63,10 @@ if [[ "$before_hash" == "$after_hash" ]]; then
   exit 0
 fi
 
-git checkout -B "$BRANCH"
 git add "$INDEX_PATH"
 git commit -m "Index: ${ADDONS_INDEX_ENTRY_ID} ${RELEASE_TAG}"
 git push --force-with-lease origin "$BRANCH"
 
 set_output index_pr_status branch_pushed
 set_output index_pr_branch "$BRANCH"
-echo "Pushed ${BRANCH} to origin (upstream PR opened from freecad-mcp-bridge)."
+echo "Pushed ${BRANCH} from upstream/${ADDONS_INDEX_UPSTREAM_BRANCH} (Index.json only)."
