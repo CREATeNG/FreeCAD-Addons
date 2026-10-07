@@ -633,10 +633,10 @@
   "freecad-mcp-bridge": [
     {
       "repository": "https://github.com/CREATeNG/freecad-mcp-bridge",
-      "git_ref": "v0.1.17",
-      "branch_display_name": "v0.1.17",
+      "git_ref": "v0.1.18",
+      "branch_display_name": "v0.1.18",
       "freecad_min": "1.1.0",
-      "zip_url": "https://github.com/CREATeNG/freecad-mcp-bridge/archive/refs/tags/v0.1.17.zip",
+      "zip_url": "https://github.com/CREATeNG/freecad-mcp-bridge/archive/refs/tags/v0.1.18.zip",
       "curated": false
     }
   ],
