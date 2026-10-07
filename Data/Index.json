@@ -132,13 +132,23 @@
       "curated": true
     }
   ],
-  "BCFPlugin": [
+  "AssemblyCut": [
     {
-      "repository": "https://github.com/podestplatz/BCF-Plugin-FreeCAD",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/podestplatz/BCF-Plugin-FreeCAD/archive/refs/heads/master.zip",
-      "curated": true
+      "repository": "https://github.com/cipawow-ship-it/AssemblyCut",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/cipawow-ship-it/AssemblyCut/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
+  "BananaForScale": [
+    {
+      "repository": "https://github.com/FabioTavernini/bananaforscale",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/FabioTavernini/bananaforscale/archive/refs/heads/main.zip",
+      "curated": false
     }
   ],
   "Behave-Dark-Colors": [
@@ -173,6 +183,16 @@
       "branch_display_name": "Develop",
       "zip_url": "https://github.com/APEbbers/BillOfMaterials-WB/archive/refs/heads/Develop.zip",
       "curated": true
+    }
+  ],
+  "BrickFace": [
+    {
+      "repository": "https://github.com/jacquesh82/FreeCAD-BrickFace",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.0.0",
+      "zip_url": "https://github.com/jacquesh82/FreeCAD-BrickFace/archive/refs/heads/main.zip",
+      "curated": false
     }
   ],
   "BulletDesigner": [
@@ -248,6 +268,16 @@
       "branch_display_name": "main",
       "zip_url": "https://github.com/spanner888/CamScripts/archive/refs/heads/main.zip",
       "curated": true
+    }
+  ],
+  "CarteGrid": [
+    {
+      "repository": "https://github.com/MarcBresson/CarteGrid",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/MarcBresson/CarteGrid/archive/refs/heads/main.zip",
+      "curated": false
     }
   ],
   "Catppuccin": [
@@ -475,13 +505,13 @@
       "curated": true
     }
   ],
-  "EM": [
+  "EMStudio": [
     {
-      "repository": "https://github.com/ediloren/EM-Workbench-for-FreeCAD",
+      "repository": "https://github.com/king-aj3/EMStudioFree",
       "git_ref": "master",
       "branch_display_name": "master",
-      "zip_url": "https://github.com/ediloren/EM-Workbench-for-FreeCAD/archive/refs/heads/master.zip",
-      "curated": true
+      "zip_url": "https://github.com/king-aj3/EMStudioFree/archive/refs/heads/master.zip",
+      "curated": false
     }
   ],
   "Estimate": [
@@ -587,7 +617,8 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/Reqrefusion/FreeCAD-Documentation-html/archive/refs/heads/main.zip",
-      "curated": true
+      "curated": true,
+      "sparse_cache": true
     }
   ],
   "Freecad-Built-in-themes-beta": [
@@ -597,6 +628,16 @@
       "branch_display_name": "main",
       "zip_url": "https://github.com/MisterMakerNL/Freecad-Built-in-themes-beta/archive/refs/heads/main.zip",
       "curated": true
+    }
+  ],
+  "freecad-mcp-bridge": [
+    {
+      "repository": "https://github.com/CREATeNG/freecad-mcp-bridge",
+      "git_ref": "v0.1.17",
+      "branch_display_name": "v0.1.17",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/CREATeNG/freecad-mcp-bridge/archive/refs/tags/v0.1.17.zip",
+      "curated": false
     }
   ],
   "freecad.optics_design_workbench": [
@@ -732,6 +773,15 @@
       "curated": true
     }
   ],
+  "GearWorkBench": [
+    {
+      "repository": "https://github.com/iplayfast/GearWorkBench",
+      "git_ref": "1.4",
+      "branch_display_name": "1.4",
+      "zip_url": "https://github.com/iplayfast/GearWorkBench/archive/refs/tags/1.4.zip",
+      "curated": false
+    }
+  ],
   "Gridfinity": [
     {
       "repository": "https://github.com/Stu142/FreeCAD-Gridfinity-Workbench",
@@ -815,6 +865,25 @@
       "curated": true
     }
   ],
+  "KiConnect": [
+    {
+      "repository": "https://codeberg.org/kiconnect/KiConnect",
+      "git_ref": "release",
+      "branch_display_name": "release",
+      "zip_url": "https://codeberg.org/kiconnect/KiConnect/archive/release.zip",
+      "curated": true
+    }
+  ],
+  "Lapidary": [
+    {
+      "repository": "https://github.com/Dominic-Lentini/freecad-gemstone",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/Dominic-Lentini/freecad-gemstone/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
   "lattice2": [
     {
       "repository": "https://github.com/DeepSOIC/Lattice2",
@@ -854,7 +923,8 @@
       "git_ref": "master",
       "branch_display_name": "master",
       "zip_url": "https://github.com/FreeCAD/FreeCAD-library/archive/refs/heads/master.zip",
-      "curated": true
+      "curated": true,
+      "sparse_cache": true
     }
   ],
   "Lithophane": [
@@ -909,6 +979,16 @@
       "curated": true
     }
   ],
+  "MBDWorkbench": [
+    {
+      "repository": "https://github.com/ChipsWoodShop/FreeCAD-MBDWorkbench",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/ChipsWoodShop/FreeCAD-MBDWorkbench/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
   "MeshRemodel": [
     {
       "repository": "https://github.com/mwganson/MeshRemodel",
@@ -916,6 +996,26 @@
       "branch_display_name": "master",
       "zip_url": "https://github.com/mwganson/MeshRemodel/archive/refs/heads/master.zip",
       "curated": true
+    }
+  ],
+  "MeshStudy": [
+    {
+      "repository": "https://github.com/eng-abdalla-abbas/MeshStudy",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.1",
+      "zip_url": "https://github.com/eng-abdalla-abbas/MeshStudy/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
+  "MeshToFeatures": [
+    {
+      "repository": "https://github.com/MasoudMiM/MeshToFeatures",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/MasoudMiM/MeshToFeatures/archive/refs/heads/main.zip",
+      "curated": false
     }
   ],
   "MnesarcoUtils": [
@@ -928,15 +1028,6 @@
       "curated": true
     }
   ],
-  "MOOC": [
-    {
-      "repository": "https://github.com/j-wiedemann/mooc-workbench",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/j-wiedemann/mooc-workbench/archive/refs/heads/master.zip",
-      "curated": true
-    }
-  ],
   "Movie": [
     {
       "repository": "https://github.com/Francisco-Rosa/FreeCAD-Movie",
@@ -944,6 +1035,35 @@
       "branch_display_name": "master",
       "zip_url": "https://github.com/Francisco-Rosa/FreeCAD-Movie/archive/refs/heads/master.zip",
       "curated": true
+    }
+  ],
+  "MyCustomPiping": [
+    {
+      "repository": "https://github.com/RamDj12049/MyCustomPiping",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/RamDj12049/MyCustomPiping/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
+  "Nesting": [
+    {
+      "repository": "https://github.com/StevePeters-US/Freecad-Nesting-Workbench",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.0.0",
+      "zip_url": "https://github.com/StevePeters-US/Freecad-Nesting-Workbench/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
+  "NeoRibbon": [
+    {
+      "repository": "https://github.com/robdevtech/NeoRibbon",
+      "git_ref": "master",
+      "branch_display_name": "master",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/robdevtech/NeoRibbon/archive/refs/heads/master.zip",
+      "curated": false
     }
   ],
   "NikraDAP": [
@@ -988,7 +1108,8 @@
       "git_ref": "main",
       "branch_display_name": "main",
       "zip_url": "https://github.com/FreeCAD/FreeCAD-documentation/archive/refs/heads/main.zip",
-      "curated": true
+      "curated": true,
+      "sparse_cache": true
     }
   ],
   "Ondsel-Lens": [
@@ -1112,15 +1233,6 @@
       "branch_display_name": "FreeCAD < 1.0",
       "freecad_max": "0.21.99",
       "zip_url": "https://github.com/FreeCAD/Plot/archive/refs/tags/2024.11.26.zip",
-      "curated": true
-    }
-  ],
-  "POV-Ray-Rendering": [
-    {
-      "repository": "https://github.com/TheRaytracers/freecad-povray-render",
-      "git_ref": "master",
-      "branch_display_name": "master",
-      "zip_url": "https://github.com/TheRaytracers/freecad-povray-render/archive/refs/heads/master.zip",
       "curated": true
     }
   ],
@@ -1325,6 +1437,15 @@
       "curated": true
     }
   ],
+  "SimplyPrint": [
+    {
+      "repository": "https://github.com/SimplyPrint/freecad-integration",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/SimplyPrint/freecad-integration/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
   "slic3r-tools": [
     {
       "repository": "https://github.com/limikael/freecad-slic3r-tools",
@@ -1389,6 +1510,15 @@
       "curated": true
     }
   ],
+  "stepParts": [
+    {
+      "repository": "https://github.com/iplayfast/stepParts",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "zip_url": "https://github.com/iplayfast/stepParts/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
   "Supplemental-Materials" : [
     {
       "repository": "https://github.com/FreeCAD/Supplemental-Materials" ,
@@ -1444,6 +1574,16 @@
       "curated": true
     }
   ],
+  "TexturedObjImporter": [
+    {
+      "repository": "https://github.com/mlaffran/TexturedObjImporter",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/mlaffran/TexturedObjImporter/archive/refs/heads/main.zip",
+      "curated": false
+    }
+  ],
   "ThreadProfile": [
     {
       "repository": "https://github.com/mwganson/ThreadProfile",
@@ -1497,6 +1637,16 @@
       "branch_display_name": "master",
       "zip_url": "https://github.com/triplus/ToolbarStyle/archive/refs/heads/master.zip",
       "curated": true
+    }
+  ],
+  "ToolSeek": [
+    {
+      "repository": "https://github.com/robdevtech/ToolSeek",
+      "git_ref": "main",
+      "branch_display_name": "main",
+      "freecad_min": "1.1.0",
+      "zip_url": "https://github.com/robdevtech/ToolSeek/archive/refs/heads/main.zip",
+      "curated": false
     }
   ],
   "freecad-wakatime": [
